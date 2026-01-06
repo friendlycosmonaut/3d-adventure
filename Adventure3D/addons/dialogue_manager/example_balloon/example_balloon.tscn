@@ -1,0 +1,238 @@
+[gd_scene format=4 uid="uid://73jm5qjy52vq"]
+
+[ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
+[ext_resource type="StyleBox" uid="uid://dyt0ktvu7xsib" path="res://assets/ui/dialogue_style_box_flat.tres" id="2_1337t"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="FontFile" uid="uid://bndk2fp4pvac" path="res://assets/fonts/schoolbell/Schoolbell-Regular.ttf" id="2_wqs7j"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="StyleBox" uid="uid://nrb44bsfd7k2" path="res://assets/ui/dialogue_style_box_flat_pressed.tres" id="6_v42gu"]
+[ext_resource type="StyleBox" uid="uid://tn34rr8vudiy" path="res://assets/ui/dialogue_style_box_flat_hover.tres" id="7_wqs7j"]
+[ext_resource type="StyleBox" uid="uid://owfla1qch06l" path="res://assets/ui/dialogue_style_box_flat_focus.tres" id="8_odc0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri4m3"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkmqt"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_qq3yp"]
+default_font = ExtResource("2_wqs7j")
+default_font_size = 20
+Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
+Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
+Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
+Button/styles/normal = SubResource("StyleBoxFlat_e0njw")
+MarginContainer/constants/margin_bottom = 15
+MarginContainer/constants/margin_left = 30
+MarginContainer/constants/margin_right = 30
+MarginContainer/constants/margin_top = 15
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+
+[sub_resource type="Animation" id="Animation_nlsx6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progress:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qkmqt"]
+resource_name = "progress"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Progress:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.2, -0.0157438, -4, -0.2, 0.0112069, 0.25, 0, -4, -0.25, 0, 0.25, 0, 0, -0.2, 0.00299701, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1337t"]
+_data = {
+&"RESET": SubResource("Animation_nlsx6"),
+&"progress": SubResource("Animation_qkmqt")
+}
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_v42gu"]
+data = PackedByteArray("cW9hZgAAFHEBAKxEFAAIGAAAAAAAAAAAAAAAAOAAQAAQQminKCAQQTBJFl1QJAaaMy7qxpkAlNEw0CRd41ZYSUBKacu8qJBBNffffWMFpgo7LPrvLLvqAFKaJALX1hBIYkEgyyppokE8U044019591VjBDTO8us+TlAo3effVNNCQzPqrLvqnGIIBKaJTTVXbWMBgMENK6pPLqg45Y5Y01TDVjFlQYDBYyy76yoEAlVpZ41USQwGiEssuusuccZQYEFNNVfdNElyGA0XrLLGiFJRTADlRTFnaVWeNMEgpy57qimiAVZU1V3nTBZBcu8aZxyxoopoggGAQQQ15YyGmXTIBO+aaKKaVhNOVEEENedpRZ4SCQQnvne+aIAALlVnbedMMFpppyxfnvnvjLmQUYIBIBLXlTTahgkgExyxooiCAQQQQQQQQ2nlVXTRaaYEe6x6x6oAotN191UywGQSCmacscuuseuqoEpgEEEEWeNwyWQw0wHnvl+eMYRBTTVjYEAteVVeeNNwQQHrHvinCYABDVn3TDDBckghxppopxpXnrimAQCASIDVXn3QbAYJgExy6ooogEFow4w0QQRZ1WnnXzIIJCeue666xogAtWd55V5QGQSCim+suusesMcqggggNEgWdeWUySSGmATvro6EcaIDRBBBcEEEVVMVeVFwSCCjLrnvgoaBAFTX3VVVcBkEgpxgpy5fnnjnq0ASAZIBFnnnjJZBkkEE75yoIppZ45ZZZUQ5V3XlVXVQJAaIgxy666wlEAuFZ9xZRQCSQXCcsscuuscMZyhMAggggeeh4wwwwSCCRJ+e8KCIBBBBhMEEEENeMVWBYwASATrLnoueaRRFlnnVecdCgEgoppyGnrHHCimASLBIBIDDXjJJigkkEgb47wRTkld9U1YwVXTFXlFHVSZBkEJxp5xwooiFU155RVSCSHJEsaaKeusCY5xkgggNEg/A14yGSSCCQZW+uqSKAIBBdMEFMFVedM+VQQGi0RLHHpqCBRALVnlTc9NglgJyyxp3mjHHrCwCAZIBIFXnVQrYskEgoyxgAoFkU4w4w0QVV3FVVHBQYJBGhy5xxpEAFeV519xQGGCDGmsseuKeOcJJoEAkAkNedNGO2SQSRHnqDmuRTTjBDRBBcVdVUcNJkgGBLrrigkEAV33nXlNAZYCcexhw6owoRouwQCQQC1V4yJdJYJBEuepSWaOOOMOVFNVx1VRxQmCSBIe+OsCQQDnlhdMUMkkkJohnLnijjnnYSrIBIDFnTAZZkkEg57wlIoN4A00SAQR1VYFFQIYBMMuugoBBANeVdFt2yWSnGmnHmmMUOdQRIBBHkddEitkMEx6Lm1Ck0U0SAXIBHVDNHEYYgkZy4opOAFeZRUSySSSCiGscOKMGCNgIkEEEdcNLhsmSSjnGQgE0QHDRBBDXFTfTgpkExx5whNJ0R9x5Q2KSymeqseMaEELAoEEAg1dMJluQymBrmwkAQHTRBBAHVLXLcxkM6456qNJ0155wW2q2DGqacOaEOJRAoEEA1cEJtkmCHnmiQkUQE2QIAHXFXPWpgkJ56pEGANWF4ySWGSCmmmOYEEBTAQIIsUUEJtkEk5pvZEI4E0AQQ3HTNLMLIOuecIhGIeVcEtpvWnGGjiihEKIBBAINHSYZlshoZggBEABwUwi1wxSzGYDGseAJhQXlYVNjht6gh4yiAAASAASB14kqtLJeOJaQeNBEAEAdUs2CCSTHnCg4UHXnJVctIcYIgwgoINAgAgehwCmyyTHm0HCRhABRBHDNgMokkZwwlNJ15xUaG2WmmIMIACBBQIBPodJgtkgwokBoYEEUARxxT4KZJOcMLRSFddENqshppoySAAACAATVyJCbZZGcZARAeEAAEdM0kxuADnmE0ERVQGborsYaOICUoEgAAscExsuSXgmQEQAAAXBHTNIIJeeOctGBVdMkitpmGDmghFUgEKJHJEbZJMKJYCCCBAAMcsdymGRniiU4RXXQYbZaYaMBkoAEAAlc9RmG2zjm0EUEQHRBPBPMbIeGcoFFFdUkluhXOnjAlkwkkJFHICbZIOJIaGCBFAAc0VhyGTjnA0UVR1gZ59cocOKWkEAAAM8gJsmGDgSAUEAQiXXBNIIZGeIBZGNdcgmmlpmCgCAgQAABx3cQtZeOLCBhWRFIdd8dytxzDiU0hVQwWFt8oaOAGAhSoAkcAoskkwhkwEEkEAVyxXIYJOcCLQBXXdgivmyh4gKAiQEQDRzCG3DeeLARQAQBcE0E0ospwZlkUFVwwWK2mIIKIAARIQJHgUwllk4okABYIEEBxT2yrWcOOLRSXXALVjtqho4hQJGQACVySgWSTFuLRhiQgAVPYMtoto54kFBlV0wWnWmCTHIACJQAAHHKcJtko4sABEBYEARwzymS3mOMJTQVFBJJS3yhh5IxYOKAAQxygGSSDEJIQxigSQXfYMsglgw4gNBU11SSWaWGCHKIAAAABCHHYQptsp5BgBFEsAkFR3R2m1ZOOcBDSXXBQtqulpho4ARgAAECFzygm2LIOIIBRAQISAEcs8hhtw5TgC0E1RSA2ktYaZcEIEQQYAABccoAlktjigwAAUCESkHFLHKZbeMORAtJMVdlNhs+GqGjkjhI5FACDHdUYLLKV4IsIEBEAABCxSxSGC2jDjSLRgXXfRYbOtqpkx4ARJFAggEx3xCCy0YeGLIRAQBQMABc0M8pl0w3jkmUUFRRwSLq9pspaekcQAAABAhMcsJASWQXBCwAQAEArEQAcQBIA0UDGAMxAwL8vO48FUoceiQgQQQVHLHZMgswowAkFAspzQSSW2mGCCMICCAAQSATId9Ykksl4wsQgU0gEUAAAA==")
+format = 3
+
+[node name="ExampleBalloon" type="CanvasLayer" unique_id=2124065074]
+layer = 100
+script = ExtResource("1_36de5")
+
+[node name="Balloon" type="Control" parent="." unique_id=693158195]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qq3yp")
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1873529169]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 80
+
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=499504134]
+clip_children = 2
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("2_1337t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=585949316]
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1564077963]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1480763877]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2007047748]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.14901961, 0.13725491, 0.13333334, 0.7019608)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Character"
+fit_content = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=836012910 instance=ExtResource("2_a8ve6")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.14901961, 0.13725491, 0.13333334, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Hey little bee. What're you buzzing about?"
+
+[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=936942939]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1911137223]
+unique_name_in_owner = true
+position = Vector2(-6.0000186, 0)
+scale = Vector2(1.6500009, 2.3000042)
+color = Color(0.14901961, 0.13725491, 0.13333334, 1)
+polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=868425090]
+libraries/ = SubResource("AnimationLibrary_1337t")
+autoplay = &"progress"
+
+[node name="ResponseMarginContainer" type="MarginContainer" parent="Balloon" unique_id=1623662903]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 702.0
+offset_top = -395.0
+offset_right = 702.0
+offset_bottom = -251.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 30
+
+[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/ResponseMarginContainer" unique_id=597273221 node_paths=PackedStringArray("response_template")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 5
+alignment = 1
+script = ExtResource("3_72ixx")
+response_template = NodePath("ResponseExample")
+next_action = &"ui_accept"
+
+[node name="ResponseExample" type="Button" parent="Balloon/ResponseMarginContainer/ResponsesMenu" unique_id=1167530270]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14901961, 0.13725491, 0.13333334, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_1337t")
+theme_override_styles/pressed = ExtResource("6_v42gu")
+theme_override_styles/hover = ExtResource("7_wqs7j")
+theme_override_styles/focus = ExtResource("8_odc0r")
+text = "Response Example"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=176543403]
+unique_name_in_owner = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="." unique_id=1231169677]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamWAV_v42gu")
+
+[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
+[connection signal="response_selected" from="Balloon/ResponseMarginContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bs2myvepcx3lb"
+path="res://.godot/imported/meta_chat.dialogue-c32af423b98a9edd1870b4edbe70e4df.tres"
+
+[deps]
+
+source_file="res://data/dialogue/meta_chat.dialogue"
+dest_files=["res://.godot/imported/meta_chat.dialogue-c32af423b98a9edd1870b4edbe70e4df.tres"]
+
+[params]
+
+defaults=true

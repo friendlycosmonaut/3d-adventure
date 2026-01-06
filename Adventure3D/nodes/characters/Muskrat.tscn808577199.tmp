@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b8ycrf4wosnbw"]
+
+[ext_resource type="PackedScene" uid="uid://c1svifnujc1xd" path="res://assets/quirky_series/muskrat.blend" id="1_vfx7q"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Creature.tscn" id="2_r77j2"]
+[ext_resource type="Resource" uid="uid://bs2myvepcx3lb" path="res://data/dialogue/muskrat_meta.dialogue" id="3_x1ny8"]
+
+[node name="Muskrat" unique_id=1908790876 instance=ExtResource("1_vfx7q")]
+
+[node name="Rig" parent="." index="0" unique_id=1161047513]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Rig" index="0" unique_id=1829831849]
+bones/1/position = Vector3(-4.9185706e-18, 0, 0.5422416)
+bones/1/rotation = Quaternion(0.5665414, -3.048257e-17, 3.048258e-17, 0.8240334)
+bones/1/scale = Vector3(1, 0.9061934, 0.98724216)
+bones/2/position = Vector3(3.5114217e-15, -0.28128168, -0.52757007)
+bones/2/rotation = Quaternion(0.07314725, -0.8155378, 0.57397515, -0.010011864)
+bones/2/scale = Vector3(0.9999999, 1.0000001, 1.0000002)
+bones/3/rotation = Quaternion(-0.48119763, -0.056891356, -0.07995502, 0.87110245)
+bones/3/scale = Vector3(0.99999976, 0.99999994, 1)
+bones/4/position = Vector3(0.2388922, 0.33819944, 0.42804143)
+bones/4/rotation = Quaternion(-0.36832193, 0.10156645, -0.36210215, 0.85023844)
+bones/4/scale = Vector3(0.99999994, 1.0000002, 1.0000002)
+bones/5/position = Vector3(-0.2388922, 0.33819944, 0.42804143)
+bones/5/rotation = Quaternion(-0.36832193, -0.10156645, 0.36210215, 0.85023844)
+bones/5/scale = Vector3(0.99999994, 1.0000002, 1.0000002)
+bones/6/position = Vector3(0.2058653, -0.3692656, 0.22107776)
+bones/6/rotation = Quaternion(9.0015945e-08, 0.29774365, 0.9546459, -8.288317e-08)
+bones/6/scale = Vector3(1, 1.0000002, 1.0000011)
+bones/7/position = Vector3(0.4302271, -0.30799204, -0.3447449)
+bones/7/rotation = Quaternion(-6.5885224e-08, 0.48757842, 0.8730792, -2.688343e-07)
+bones/7/scale = Vector3(1, 1.0000004, 1.0000004)
+bones/8/position = Vector3(-0.2058653, -0.3692656, 0.22107776)
+bones/8/rotation = Quaternion(-9.0015945e-08, 0.29774365, 0.9546459, 8.288317e-08)
+bones/8/scale = Vector3(1, 1.0000002, 1.0000011)
+bones/9/position = Vector3(-0.4302271, -0.30799204, -0.3447449)
+bones/9/rotation = Quaternion(6.5885224e-08, 0.48757842, 0.8730792, 2.688343e-07)
+bones/9/scale = Vector3(1, 1.0000004, 1.0000004)
+
+[node name="Creature" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_r77j2")]
+root = NodePath("..")
+dialogue = ExtResource("3_x1ny8")
+character_name = "Muskrat"

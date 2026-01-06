@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://djnmxvslvv3t2"]
+
+[ext_resource type="PackedScene" uid="uid://drkga0ugp7mpn" path="res://assets/easy_enemy_pack/Frog.blend" id="1_8qiva"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_0muov"]
+
+[node name="Frog" unique_id=806503547 instance=ExtResource("1_8qiva")]
+
+[node name="FrogArmature" parent="." index="0" unique_id=365772476]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="FrogArmature" index="0" unique_id=703039027]
+bones/1/position = Vector3(0.0022490511, 1.7807117, -0.043019347)
+bones/1/rotation = Quaternion(-0.0043050093, 0, 0, 0.9999908)
+bones/2/rotation = Quaternion(0.716094, 0.6965053, -0.045538515, -0.00400032)
+bones/3/rotation = Quaternion(0.18862252, 0.22289668, 0.48725003, 0.8229982)
+bones/4/rotation = Quaternion(-0.7287663, -0.14195567, 0.18916053, 0.6426248)
+bones/6/rotation = Quaternion(0.02590719, 0.7614539, 0.6471563, -0.026561677)
+bones/7/rotation = Quaternion(-0.021945009, -0.0026519091, -0.037009176, 0.9990704)
+bones/8/rotation = Quaternion(-0.19482818, -0.2539944, 0.05143281, 0.9459828)
+bones/11/position = Vector3(0.2795305, -1.2566756, -1.0114362)
+bones/11/rotation = Quaternion(-0.003903314, -0.003444065, -0.6796971, 0.73347455)
+bones/12/rotation = Quaternion(0.13470642, 0.8887581, 0.4379387, 0.013159659)
+bones/13/rotation = Quaternion(0.6819576, 0.07101493, 0.6493349, 0.32902133)
+bones/14/rotation = Quaternion(0.9794999, 0.12647556, 0.046729233, -0.14966792)
+bones/15/rotation = Quaternion(-0.042914543, -0.0038369542, 0.71577525, 0.6970004)
+bones/16/rotation = Quaternion(-0.5041503, 0.7954604, -0.13622832, 0.30743626)
+bones/17/rotation = Quaternion(-0.74453574, 0.2082904, -0.11202027, 0.6242862)
+bones/18/position = Vector3(-0.29404908, -1.2566756, -1.0114363)
+bones/18/rotation = Quaternion(-0.0039291787, 0.0037183624, 0.679548, 0.73361117)
+bones/19/rotation = Quaternion(0.45772788, -0.21023706, 0.02052602, 0.8636343)
+bones/20/rotation = Quaternion(0.78750753, -0.33549476, 0.51654494, 0.021368459)
+bones/21/rotation = Quaternion(0.98025966, -0.12275274, -0.02400617, -0.15312281)
+bones/24/rotation = Quaternion(0.7071068, -9.806158e-07, -9.806158e-07, 0.7071068)
+bones/25/position = Vector3(1.3145602, 0.045498554, -0.42155713)
+bones/26/rotation = Quaternion(0.7071068, -9.806158e-07, -9.806158e-07, 0.7071068)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1920707291]
+unique_name_in_owner = true
+
+[node name="Character" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_0muov")]
+root = NodePath("..")
+character_name = "Sticky"

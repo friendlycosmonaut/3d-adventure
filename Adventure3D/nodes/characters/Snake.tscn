@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://boiimmac8107n"]
+
+[ext_resource type="PackedScene" uid="uid://dy5yaetd2f5si" path="res://assets/easy_enemy_pack/Snake.blend" id="1_ati24"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_62bh6"]
+
+[node name="Snake" unique_id=25665001 instance=ExtResource("1_ati24")]
+
+[node name="SnakeArmature" parent="." index="0" unique_id=455570724]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="SnakeArmature" index="0" unique_id=808171465]
+bones/1/position = Vector3(-0.050867286, 1.0626276, -0.2902887)
+bones/2/rotation = Quaternion(0.007334788, 0.26916558, 0.012480713, 0.9629851)
+bones/3/rotation = Quaternion(-0.44886592, -0.22783418, -0.1202494, 0.8556583)
+bones/4/rotation = Quaternion(-0.034784272, 0.7606269, 0.64446825, -0.06998199)
+bones/5/position = Vector3(-0.06924509, 0.3790015, 0.38751563)
+bones/5/rotation = Quaternion(-0.85694504, -0.03622514, -0.060805947, 0.5105249)
+bones/6/rotation = Quaternion(0.22456351, 0.002846924, -0.0026091903, 0.97445184)
+bones/7/rotation = Quaternion(0.0456246, 0.0014234929, 5.0780633e-05, 0.9989577)
+bones/8/rotation = Quaternion(-0.02370976, 0.0008913342, 2.6716096e-05, 0.9997185)
+bones/10/position = Vector3(-0.08393787, 2.4983196, 0.34197125)
+bones/10/rotation = Quaternion(-0.0022084126, 0.7055196, 0.7086836, -0.0021982475)
+bones/11/rotation = Quaternion(-0.19134015, -0.0030580666, -0.0005962904, 0.9815189)
+bones/12/rotation = Quaternion(0.00058705144, 0.9820477, -0.1886076, 0.0030634273)
+bones/13/rotation = Quaternion(-1.185443e-06, 0.9715772, -0.23672307, -1.7976785e-06)
+bones/14/rotation = Quaternion(0.19129494, 6.5950525e-07, -4.704495e-07, 0.98153263)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=541343835]
+unique_name_in_owner = true
+
+[node name="Character" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_62bh6")]
+root = NodePath("..")
+character_name = "Monty"

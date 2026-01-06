@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://da3ik70t6hs8l"]
+
+[ext_resource type="PackedScene" uid="uid://dy1nvarss3cf0" path="res://assets/easy_enemy_pack/Spider.blend" id="1_t5mwx"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_0pd2e"]
+[ext_resource type="Resource" uid="uid://bs2myvepcx3lb" path="res://data/dialogue/meta_chat.dialogue" id="3_i4dof"]
+
+[node name="Spider" unique_id=537083917 instance=ExtResource("1_t5mwx")]
+
+[node name="SpiderArmature" parent="." index="0" unique_id=1840074009]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="SpiderArmature" index="0" unique_id=671911969]
+bones/1/position = Vector3(0.0020633247, 1.5108392, -0.17911193)
+bones/1/rotation = Quaternion(-0.0052201347, 0.00018130342, 0.037275534, 0.99929136)
+bones/2/rotation = Quaternion(0.49776736, 0.067245245, -0.2917564, 0.8139926)
+bones/3/rotation = Quaternion(0.41234815, 0.05917665, -0.04806718, 0.9078308)
+bones/4/rotation = Quaternion(0.23296165, 0.17241386, 0.06999642, 0.9545171)
+bones/5/rotation = Quaternion(0.29594654, 0.20900926, -0.2994854, 0.8826321)
+bones/6/rotation = Quaternion(0.64917344, 0.18809338, -0.07812753, 0.7328648)
+bones/7/rotation = Quaternion(0.23773839, 0.25849548, 0.1184401, 0.9287802)
+bones/8/rotation = Quaternion(-0.11645314, 0.3641923, -0.495213, 0.7801069)
+bones/9/rotation = Quaternion(0.5043327, 0.8173739, -0.1462608, 0.23697348)
+bones/10/rotation = Quaternion(0.011706757, 0.51051855, 0.24602993, 0.8238343)
+bones/11/rotation = Quaternion(0.025104295, 0.30994633, -0.4509839, 0.83661026)
+bones/12/rotation = Quaternion(0.5916147, 0.66186684, -0.13861623, 0.43898737)
+bones/13/rotation = Quaternion(0.14121726, 0.41070107, 0.30108336, 0.8489589)
+bones/14/rotation = Quaternion(0.5200225, -0.13184936, 0.19297521, 0.82155526)
+bones/15/rotation = Quaternion(0.36554193, -0.3589761, -0.07134144, 0.8558188)
+bones/16/rotation = Quaternion(0.14823218, 0.04248073, -0.16377543, 0.97437173)
+bones/17/rotation = Quaternion(0.16518803, 0.11043613, 0.2900644, 0.93615144)
+bones/18/rotation = Quaternion(-0.6696708, 0.6897658, 0.032217044, -0.27336097)
+bones/19/rotation = Quaternion(0.102018595, 0.07348748, -0.25657678, 0.9583111)
+bones/20/rotation = Quaternion(-0.48900428, 0.61315525, 0.029499156, 0.6197139)
+bones/21/rotation = Quaternion(0.44962898, 0.7374621, -0.10303766, -0.49332213)
+bones/22/rotation = Quaternion(-0.2194161, 0.67246425, 0.0651222, 0.7038519)
+bones/23/rotation = Quaternion(-0.283779, 0.45725566, 0.25062668, 0.80471927)
+bones/24/rotation = Quaternion(-0.56435674, -0.09843209, 0.20587981, 0.7933638)
+bones/25/rotation = Quaternion(-0.31918788, 0.5792448, -0.08781105, 0.74490523)
+bones/26/rotation = Quaternion(-0.65394074, 0.00898962, 0.014260088, 0.75635797)
+bones/28/rotation = Quaternion(0.23727049, -0.00028590884, 0.0003878787, 0.9714436)
+bones/30/position = Vector3(1.6840085, 0.026509192, 2.6055408)
+bones/30/rotation = Quaternion(0.071346745, 0.68147093, 0.7243882, -0.07595228)
+bones/31/position = Vector3(2.6647656, 0.019993948, 1.8330393)
+bones/31/rotation = Quaternion(0.22651464, 0.6423231, 0.69175124, -0.23998412)
+bones/32/position = Vector3(1.9942557, 0.02456899, -2.1354766)
+bones/33/position = Vector3(2.8743162, 0.012803292, -1.1050227)
+bones/35/position = Vector3(-1.6953346, 0.022169795, 2.6765668)
+bones/35/rotation = Quaternion(-0.07146105, 0.6814827, 0.72437704, 0.075845696)
+bones/36/position = Vector3(-2.5642102, 0.02926357, 1.7118505)
+bones/37/position = Vector3(-2.0318463, 0.01991869, -2.2013936)
+bones/37/rotation = Quaternion(-0.72762495, 0.38000038, -0.019762773, 0.57076365)
+bones/38/position = Vector3(-2.8033836, 0.021631049, -1.0741156)
+bones/38/rotation = Quaternion(0.7269907, -0.5212079, -0.17536701, -0.4111853)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=447326190]
+unique_name_in_owner = true
+
+[node name="Character" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_0pd2e")]
+root = NodePath("..")
+dialogue = ExtResource("3_i4dof")
+dialogue_title = "start"
+character_name = "Sigourney"

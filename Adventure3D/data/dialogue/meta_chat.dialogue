@@ -1,0 +1,15 @@
+~ start
+do Global.character_animation.emit("Frog", "Attack")
+Oh, Bee, it's you! How embarrassing. 
+I was just testing the dialogue, you see.
+- Looks like it's working!
+	It LOOKS like it, but we should do more tests.
+- That's awfully meta of you
+	You know me. Actually... no you don't. You only just met-a me!
+	- Good one.
+		Haha, thanks. I try.
+	- You're killing me.
+		Really? Or... meta-phorically? Heehee.
+- You do you => END
+Let's talk again later! 
+=> END

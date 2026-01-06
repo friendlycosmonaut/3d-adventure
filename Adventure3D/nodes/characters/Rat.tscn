@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cikbxovaqisyj"]
+
+[ext_resource type="PackedScene" uid="uid://dxmll3f55qook" path="res://assets/easy_enemy_pack/Rat.blend" id="1_3qrag"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_fwqe4"]
+
+[node name="Rat" unique_id=539307505 instance=ExtResource("1_3qrag")]
+
+[node name="RatArmature" parent="." index="0" unique_id=485352133]
+transform = Transform3D(-0.39549208, 0, -3.4575017e-08, 0, 0.39549208, 0, 3.4575017e-08, 0, -0.39549208, 0, 0, 0)
+
+[node name="Skeleton3D" parent="RatArmature" index="0" unique_id=1922722677]
+bones/1/position = Vector3(-1.1065094, 0.10000348, 2.0247295)
+bones/1/rotation = Quaternion(0.7071068, -8.7384575e-07, -8.7384575e-07, 0.7071068)
+bones/2/position = Vector3(0.0053776503, 2.2112372, -0.13875788)
+bones/3/position = Vector3(-0.38924643, 0.5431469, 1.159961)
+bones/3/rotation = Quaternion(-0.0024091671, 0.0024089378, 0.7071027, 0.7071027)
+bones/4/rotation = Quaternion(0.7081478, -0.70344484, -0.027543418, 0.05416177)
+bones/5/rotation = Quaternion(-0.3406969, -0.017846622, -0.0064686155, 0.9399816)
+bones/6/position = Vector3(-0.54483676, 0.8379976, -1.8745509)
+bones/6/rotation = Quaternion(0.026699262, -0.026699675, 0.7066026, 0.70660245)
+bones/7/rotation = Quaternion(0.60584414, -0.6109583, 0.34250075, -0.3773276)
+bones/8/rotation = Quaternion(-0.51919156, 0.01653801, 0.010048957, 0.8544387)
+bones/9/position = Vector3(0.32761386, 0.5431469, 1.1599609)
+bones/9/rotation = Quaternion(0.6889079, 0.68890786, 0.15939264, -0.15939285)
+bones/10/rotation = Quaternion(0.00058529875, -0.07777925, 0.6657485, 0.74211115)
+bones/11/rotation = Quaternion(-0.47784936, 0.04591299, 0.025019724, 0.87688434)
+bones/12/position = Vector3(0.48320392, 0.83799756, -1.8745508)
+bones/12/rotation = Quaternion(0.70661074, 0.70661074, 0.02648137, -0.026481781)
+bones/13/rotation = Quaternion(0.3486414, 0.37147695, 0.6023344, 0.61453027)
+bones/14/rotation = Quaternion(-0.5192656, -0.00812096, -0.0049348795, 0.8545602)
+bones/15/position = Vector3(-0.03228271, 1.0124259, -4.0877857)
+bones/15/rotation = Quaternion(0.59534866, 1.9156168e-07, 1.4194227e-07, 0.8034675)
+bones/17/rotation = Quaternion(0.06016819, 0.00053092686, 0.00036432664, 0.9981881)
+bones/18/rotation = Quaternion(0.31251848, 0.010023165, -0.020041745, 0.9496473)
+bones/19/rotation = Quaternion(0.07474586, -0.0039577633, 0.062446076, 0.99523765)
+bones/20/rotation = Quaternion(0.02309351, 0.009122034, 0.12818311, 0.9914397)
+bones/21/rotation = Quaternion(0.028603533, -1.1937925e-07, -1.511186e-08, 0.9995908)
+bones/22/rotation = Quaternion(0.056584045, 1.1522975e-07, 5.2057615e-08, 0.9983978)
+bones/23/position = Vector3(-0.07365465, 1.0671291, 0.84602916)
+bones/23/rotation = Quaternion(0.008068598, 0.74169755, 0.6704203, -0.018875884)
+bones/24/rotation = Quaternion(-0.0008122423, 0.004503594, -0.022072734, 0.9997459)
+bones/25/rotation = Quaternion(-0.17191961, -0.25488892, 0.045147147, 0.9504931)
+bones/26/position = Vector3(-0.03228271, 1.2948401, -3.1597083)
+bones/26/rotation = Quaternion(5.3651183e-06, 0.6954638, 0.7185612, 5.192662e-06)
+bones/27/rotation = Quaternion(0.052304603, 0.0007447129, -0.013528183, 0.99853927)
+bones/28/position = Vector3(-1.443012, 0.10000349, -3.555298)
+bones/28/rotation = Quaternion(0.7071067, -1.2110202e-06, -1.2110202e-06, 0.7071068)
+bones/29/position = Vector3(1.3547692, 0.10000348, 0.98672915)
+bones/29/rotation = Quaternion(0.7071068, -1.2110204e-06, -1.2110204e-06, 0.7071068)
+bones/30/position = Vector3(1.3921353, 0.10000349, -3.555298)
+bones/30/rotation = Quaternion(0.7071067, -1.548195e-06, -1.548195e-06, 0.7071068)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=2119867253]
+unique_name_in_owner = true
+
+[node name="Character" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_fwqe4")]
+root = NodePath("..")
+character_name = "Wiley"

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ojudf5nueqji"]
+
+[ext_resource type="PackedScene" uid="uid://ciskvbf2s2x2e" path="res://assets/easy_enemy_pack/Wasp.blend" id="1_tnsxy"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_q5ilb"]
+
+[node name="Wasp" unique_id=1286918923 instance=ExtResource("1_tnsxy")]
+
+[node name="WaspArmature" parent="." index="0" unique_id=1591231146]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="WaspArmature" index="0" unique_id=388076031]
+bones/1/position = Vector3(-2.5414424e-08, 0.4859334, -0.16992736)
+bones/1/rotation = Quaternion(-0.04681235, -1.2068091e-07, 1.32071705e-08, 0.9989037)
+bones/2/position = Vector3(-0.033058397, 2.1555643, -0.12473103)
+bones/2/rotation = Quaternion(-0.3677782, 0.60393655, -0.36777782, 0.6039365)
+bones/3/rotation = Quaternion(-0.08005764, -0.70255995, -0.080057584, 0.7025604)
+bones/4/rotation = Quaternion(-0.403609, 2.1437593e-07, -1.951387e-07, 0.91493165)
+bones/5/rotation = Quaternion(0.7030148, 0.17771189, 0.6729913, -0.14584738)
+bones/6/rotation = Quaternion(0.6912974, -0.1382561, 0.68796176, 0.17234245)
+bones/8/rotation = Quaternion(-0.33350077, -0.015284801, -0.008900366, 0.9425839)
+bones/9/rotation = Quaternion(-0.52206993, -0.007537476, -0.0065449355, 0.85284436)
+bones/10/rotation = Quaternion(0.0118057905, 0.9562, -0.29247603, -3.2858687e-05)
+bones/11/rotation = Quaternion(0.52576745, 0.53146595, 0.64948094, -0.13887833)
+bones/12/rotation = Quaternion(0.22158381, 0.65238476, 0.21090017, 0.6934089)
+bones/13/rotation = Quaternion(-0.3000412, 0.36613375, -0.45084175, 0.7567451)
+bones/14/rotation = Quaternion(0.6653844, 0.5640448, 0.36088067, -0.32997313)
+bones/15/rotation = Quaternion(0.4669453, 0.43782166, -0.063877724, 0.76563305)
+bones/16/rotation = Quaternion(-0.40199864, 0.51268536, -0.400122, 0.6445565)
+bones/17/rotation = Quaternion(0.71748614, 0.65351737, 0.20869713, -0.12072414)
+bones/18/rotation = Quaternion(0.47119442, 0.4216028, -0.22397353, 0.74166214)
+bones/19/rotation = Quaternion(-0.57812095, 0.5441675, -0.3400987, 0.503975)
+bones/21/rotation = Quaternion(-0.21248189, 0.9600758, 0.18191074, 0.0038144947)
+bones/22/rotation = Quaternion(0.51690227, -0.6557737, 0.17338273, 0.52221775)
+bones/24/rotation = Quaternion(-0.37454313, 0.8103561, 0.11701508, -0.43514132)
+bones/25/rotation = Quaternion(-0.44862184, 0.84782726, -0.27827471, -0.049907513)
+bones/26/rotation = Quaternion(0.5800523, 0.7750531, -0.15553708, -0.19657157)
+bones/27/rotation = Quaternion(-0.04223753, 0.30691317, -0.29925367, 0.90247864)
+bones/28/rotation = Quaternion(-0.6554976, 0.40238482, -0.062558465, 0.63599986)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=568259570]
+unique_name_in_owner = true
+
+[node name="Character" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_q5ilb")]
+root = NodePath("..")

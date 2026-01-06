@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://fn5jg48dkstg"]
+
+[ext_resource type="Script" uid="uid://dx5k4257w68co" path="res://nodes/characters/character.gd" id="1_wlkla"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i5gnm"]
+radius = 6.0
+
+[node name="Character" type="Node3D" unique_id=1387622616]
+script = ExtResource("1_wlkla")
+
+[node name="InteractRadius" type="Area3D" parent="." unique_id=1142122865]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractRadius" unique_id=112953813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_i5gnm")

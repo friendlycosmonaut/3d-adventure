@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ci7bblct2g8k0"]
+
+[ext_resource type="Script" uid="uid://0nrhucnuaphr" path="res://player.gd" id="1_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://bgfid45gobslh" path="res://Assets/Creatures/Sparrow.tscn" id="2_gntrk"]
+[ext_resource type="Script" uid="uid://djo2jjdca5k2" path="res://Scenes/camera.gd" id="3_gntrk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ldgsr"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1676028852]
+collision_layer = 3
+script = ExtResource("1_kyqiw")
+WALK_SPEED = 5.0
+RUN_SPEED = 7.0
+JUMP_VELOCITY = 6.0
+mouse_sensitivity = null
+tilt_limit = null
+camera_damping = null
+momentum_scalar = null
+turn_scalar = null
+
+[node name="Sparrow" parent="." unique_id=622454204 instance=ExtResource("2_gntrk")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=134313655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ldgsr")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1706280492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1978387993]
+spring_length = 4.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1476994914]
+fov = 60.0
+script = ExtResource("3_gntrk")
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/SpringArm3D/Camera3D" unique_id=212931451]
+target_position = Vector3(0, 0, -100)
+
+[node name="DialoguePivot" type="Node3D" parent="." unique_id=79483494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6655042, 1, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="DialoguePivot" unique_id=721811781]
+spring_length = 3.0
