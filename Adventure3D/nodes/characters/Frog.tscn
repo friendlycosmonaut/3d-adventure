@@ -6,7 +6,7 @@
 [node name="Frog" unique_id=806503547 instance=ExtResource("1_8qiva")]
 
 [node name="FrogArmature" parent="." index="0" unique_id=365772476]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0, 0)
 
 [node name="Skeleton3D" parent="FrogArmature" index="0" unique_id=703039027]
 bones/1/position = Vector3(0.0022490511, 1.7807117, -0.043019347)

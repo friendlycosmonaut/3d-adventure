@@ -1,6 +1,6 @@
 ~ start
-do Global.character_animation.emit("Frog", "Attack")
 Oh, Bee, it's you! How embarrassing. 
+do Global.character_animation.emit("Frog", "Attack")
 I was just testing the dialogue, you see.
 - Looks like it's working!
 	It LOOKS like it, but we should do more tests.

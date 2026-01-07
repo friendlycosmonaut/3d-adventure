@@ -1,0 +1,26 @@
+~ start
+Well, hello there little buzzling!
+- Um... are you going to eat me? [if not is_flag("silly_billy")]
+	Oh nah mate. I'm not gonna make the same mistake as Billy.
+	- Who's Billy?
+	- What mistake?
+	Billy's a huntsman, and a cocky bugger. Snuck up on a buzzling minding her own beeswax.
+	But soon as he got near, lil' bee dropped a pheromone alarm. Her mates swarmed!
+	Fully messed Billy up, too. He learned his lesson, but. We all mainly stick to flies now.
+	- Silly Billy. 
+	do flag("silly_billy")
+	=> start
+- What's your name? [if not is_flag("asked_name")]
+	Sigourney.
+	- Sigourney what?
+		...
+		It's not "Weaver", if that's what you're thinking.
+		do flag("asked_name")
+		=> start
+- Can I help you? [if not is_flag("asked_to_help")]
+	Really? Gee, bees are such do-gooders. Shame they say you're dying out.
+	Yeah you could do me a favour. 
+	do flag("asked_to_help")
+	do Global.set_quest("Help Spider", 1)
+	=> start
+- Never mind. => END

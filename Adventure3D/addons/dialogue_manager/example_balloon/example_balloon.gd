@@ -107,6 +107,15 @@ func _notification(what: int) -> void:
 			dialogue_label.skip_typing()
 
 
+var flags = [] 
+func is_flag(parameter: String):
+	return flags.has(parameter)
+
+
+func flag(parameter: String):
+	flags.push_back(parameter)
+
+
 ## Start some dialogue
 func start(with_dialogue_resource: DialogueResource = null, title: String = "", extra_game_states: Array = []) -> void:
 	temporary_game_states = [self] + extra_game_states

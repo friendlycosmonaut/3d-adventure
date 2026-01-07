@@ -6,7 +6,7 @@
 [node name="Rat" unique_id=539307505 instance=ExtResource("1_3qrag")]
 
 [node name="RatArmature" parent="." index="0" unique_id=485352133]
-transform = Transform3D(-0.39549208, 0, -3.4575017e-08, 0, 0.39549208, 0, 3.4575017e-08, 0, -0.39549208, 0, 0, 0)
+transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, 0, 0, 0)
 
 [node name="Skeleton3D" parent="RatArmature" index="0" unique_id=1922722677]
 bones/1/position = Vector3(-1.1065094, 0.10000348, 2.0247295)

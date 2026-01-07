@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dy1nvarss3cf0" path="res://assets/easy_enemy_pack/Spider.blend" id="1_t5mwx"]
 [ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_0pd2e"]
-[ext_resource type="Resource" uid="uid://bs2myvepcx3lb" path="res://data/dialogue/meta_chat.dialogue" id="3_i4dof"]
+[ext_resource type="Resource" uid="uid://b12tlmb7pkqfb" path="res://data/dialogue/spider.dialogue" id="3_i4dof"]
 
 [node name="Spider" unique_id=537083917 instance=ExtResource("1_t5mwx")]
 

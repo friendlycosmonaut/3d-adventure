@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1978387993]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23736525, -0.32088065, 0)
-spring_length = 2.5
+spring_length = 3.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1476994914 node_paths=PackedStringArray("player", "camera_pivot")]
 fov = 60.0

@@ -93,13 +93,13 @@ func default_state(delta):
 		speed = lerpf(speed, 0.0, 0.1)
 	
 	# Handle fly.
-	var x_rotation = - speed * 0.05
+	var x_rotation = speed * 0.05
 	if Input.is_action_pressed("fly"):
 		velocity.y = lerp(velocity.y, JUMP_VELOCITY, 0.1)
-		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation + 0.4, 0.05)
+		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation - 0.2, 0.05)
 	elif not is_on_floor() and Input.is_action_pressed("sink"):
 		velocity.y = lerp(velocity.y, -JUMP_VELOCITY, 0.1)
-		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation - 0.4, 0.05)
+		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation + 0.2, 0.05)
 	else:
 		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation, 0.07)
 		# Add the gravity.
