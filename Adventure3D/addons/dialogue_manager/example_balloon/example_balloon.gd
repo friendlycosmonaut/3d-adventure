@@ -34,6 +34,9 @@ var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
 
+## An array to store dialogue flags that do not require an associated value
+var flags: Array = [] 
+
 @onready var voice = %Voice
 
 ## The current line
@@ -107,8 +110,7 @@ func _notification(what: int) -> void:
 			dialogue_label.skip_typing()
 
 
-var flags = [] 
-func is_flag(parameter: String):
+func has_flag(parameter: String):
 	return flags.has(parameter)
 
 

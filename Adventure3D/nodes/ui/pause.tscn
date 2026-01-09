@@ -1,10 +1,740 @@
 [gd_scene format=3 uid="uid://bwx403ovp84ry"]
 
-[node name="Pause" type="CanvasLayer" unique_id=988986646]
+[ext_resource type="Texture2D" uid="uid://b3qgdhacxne4x" path="res://assets/ui/panels/spritesheet-double.png" id="1_0iqnu"]
+[ext_resource type="FontFile" uid="uid://bndk2fp4pvac" path="res://assets/ui/dialogue/fonts/Schoolbell-Regular.ttf" id="1_xbdd6"]
+[ext_resource type="Texture2D" uid="uid://bm1khkbj2ffkj" path="res://assets/ui/panels/star.png" id="2_0iqnu"]
+[ext_resource type="Script" uid="uid://bk5yfiesm5c04" path="res://nodes/ui/settings.gd" id="2_xdbth"]
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1541341873]
+[sub_resource type="Theme" id="Theme_82h7j"]
+default_font = ExtResource("1_xbdd6")
+default_font_size = 45
+HBoxContainer/constants/separation = 10
+RichTextLabel/colors/default_color = Color(0.25786883, 0.19213328, 0.15610188, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82h7j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iqnu"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_0iqnu")
+texture_margin_left = 21.0
+texture_margin_top = 21.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0
+region_rect = Rect2(724, 1152, 48, 48)
+modulate_color = Color(0.6959769, 0.67777395, 0.67160046, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xbdd6"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_0iqnu")
+texture_margin_left = 21.0
+texture_margin_top = 21.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0
+region_rect = Rect2(724, 1152, 48, 48)
+modulate_color = Color(0.89739984, 0.8973998, 0.8973997, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2gpt1"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_0iqnu")
+texture_margin_left = 21.0
+texture_margin_top = 21.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0
+region_rect = Rect2(724, 1152, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82h7j"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_0iqnu")
+texture_margin_left = 21.0
+texture_margin_top = 22.0
+texture_margin_right = 21.0
+texture_margin_bottom = 22.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(628, 1152, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2e2bk"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_0iqnu")
+texture_margin_left = 21.0
+texture_margin_top = 22.0
+texture_margin_right = 21.0
+texture_margin_bottom = 22.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(628, 1152, 48, 48)
+modulate_color = Color(0.6116496, 0.6116497, 0.6116495, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_28laj"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_0iqnu")
+texture_margin_left = 21.0
+texture_margin_top = 22.0
+texture_margin_right = 21.0
+texture_margin_bottom = 22.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(628, 1152, 48, 48)
+modulate_color = Color(0.92473, 0.92473, 0.92473, 1)
+
+[node name="Pause" type="CanvasLayer" unique_id=988986646]
+metadata/_edit_vertical_guides_ = [2376.0]
+
+[node name="Control" type="Control" parent="." unique_id=106000335]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_82h7j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=964606861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="Control" parent="Control/VBoxContainer" unique_id=442702114]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1230974328]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="Left" type="Control" parent="Control/VBoxContainer/HBoxContainer" unique_id=2086168291]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Middle" type="Control" parent="Control/VBoxContainer/HBoxContainer" unique_id=739200201]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle" unique_id=753178121]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 100
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/VBoxContainer/HBoxContainer/Middle/MarginContainer" unique_id=1849085072]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_0iqnu")
+region_rect = Rect2(384, 864, 128, 128)
+patch_margin_left = 41
+patch_margin_top = 50
+patch_margin_right = 36
+patch_margin_bottom = 41
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TabContainer" type="TabContainer" parent="Control/VBoxContainer/HBoxContainer/Middle" unique_id=412215741]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/tab_separation = 8
+theme_override_font_sizes/font_size = 50
+theme_override_styles/panel = SubResource("StyleBoxEmpty_82h7j")
+theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_0iqnu")
+theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_xbdd6")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_2gpt1")
+theme_override_styles/tab_focus = SubResource("StyleBoxTexture_2gpt1")
+tab_alignment = 1
+current_tab = 0
+clip_tabs = false
+switch_on_drag_hover = false
+
+[node name="Home" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer" unique_id=1423415633]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home" unique_id=304685288]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/VBoxContainer" unique_id=1220532256]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Currently in: Buzzy Gully"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/VBoxContainer" unique_id=2037618563]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/VBoxContainer/VBoxContainer" unique_id=190719139]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35904998, 0.25520548, 0.14208129, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_82h7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2e2bk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_28laj")
+text = "Continue"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/VBoxContainer/VBoxContainer" unique_id=1552821693]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35904998, 0.25520548, 0.14208129, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_82h7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2e2bk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_28laj")
+text = "Save"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/VBoxContainer/VBoxContainer" unique_id=89597852]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35904998, 0.25520548, 0.14208129, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_82h7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2e2bk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_28laj")
+text = "Main Menu"
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/VBoxContainer/VBoxContainer" unique_id=2135166859]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35904998, 0.25520548, 0.14208129, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_82h7j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2e2bk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_28laj")
+text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home" unique_id=547608908]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="Version" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Home/MarginContainer" unique_id=451928577]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.30951113, 0.23259756, 0.1918925, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Current Version 0.0.1"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="To Do" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer" unique_id=1857892415]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 20
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do" unique_id=147015733]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer" unique_id=2033566277]
+layout_mode = 2
+texture = ExtResource("1_0iqnu")
+region_rect = Rect2(0, 608, 184, 184)
+patch_margin_left = 34
+patch_margin_top = 40
+patch_margin_right = 96
+patch_margin_bottom = 56
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect" unique_id=659304484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer" unique_id=375324914]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer" unique_id=1702818237]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=889550770]
+layout_mode = 2
+bbcode_enabled = true
+text = "✓ [s]Find Sigourney's favourite rock[/s]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=667638890]
+layout_mode = 2
+text = ".  Wait for wood-boring beetle to bore out a home"
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=895372699]
+layout_mode = 2
+text = ".  Collect pollen [0/10]"
+fit_content = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=147944605]
+layout_mode = 2
+text = ".  Tell mean bee to buzz off"
+fit_content = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1239103851]
+layout_mode = 2
+text = ".  Scout the Upper Gully"
+fit_content = true
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=538059510]
+layout_mode = 2
+text = "✓  Dance with bees"
+fit_content = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/To Do/MarginContainer/NinePatchRect/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1616846375]
+layout_mode = 2
+text = ".  Find all flying friends"
+fit_content = true
+
+[node name="Items" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer" unique_id=1994855004]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 20
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items" unique_id=1702088370]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer" unique_id=530963701]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer" unique_id=1762278412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer" unique_id=1667155076]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1715830614]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1907557018]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=721707572]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1087305805]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=300500922]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1394661431]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=187049138]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2076324100]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1762076343]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1159759074]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=931945919]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=135960345]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=8497387]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=314892952]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1976261993]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=651462349]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2075338456]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9" unique_id=340174373]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9" unique_id=2095763520]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer9" unique_id=1072062599]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1954835482]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1859217101]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1573378771]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1088113737]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1621044438]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=2109834741]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=165524658]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=1770963369]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1002729383]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12" unique_id=1588104925]
+layout_mode = 2
+texture = ExtResource("2_0iqnu")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12" unique_id=1226007393]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Item"
+vertical_alignment = 2
+
+[node name="Amount" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Items/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer12" unique_id=1498287766]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "x 10"
+
+[node name="Settings" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer" unique_id=1789471020]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 20
+script = ExtResource("2_xdbth")
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings" unique_id=16082887]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer" unique_id=1829786844]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer" unique_id=906046126]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer" unique_id=789317651]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=508240632]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=177824585]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reset to Defaults"
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer11" unique_id=662978517]
+layout_mode = 2
+size_flags_horizontal = 10
+text = " Reset "
+
+[node name="Gameplay" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1918915941]
+layout_mode = 2
+text = "Gameplay"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1491602417]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1685886174]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Invert Mouse Y Axis"
+
+[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=241238108]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=545116592]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=462139819]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mouse Sensitivity"
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=669479527]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="Value" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1080528181]
+layout_mode = 2
+text = "50"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=405778729]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2117592498]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mouse FOV"
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1925419161]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 30.0
+max_value = 180.0
+value = 50.0
+
+[node name="Value" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1432448747]
+layout_mode = 2
+text = "50"
+
+[node name="Audio" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1983533814]
+layout_mode = 2
+text = "Audio"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1380025025]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1332271886]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master"
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=1586523248]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="Value" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer5" unique_id=540936373]
+layout_mode = 2
+text = "50%"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2100593065]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=315637405]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1669133790]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="Value" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer6" unique_id=1122402976]
+layout_mode = 2
+text = "50%"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1583149378]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=265701461]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound Effects"
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=1999956704]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="Value" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer7" unique_id=333154719]
+layout_mode = 2
+text = "50%"
+
+[node name="Display" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=1770486550]
+layout_mode = 2
+text = "Display"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=669341215]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=214226062]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fullscreen"
+
+[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1518154679]
+layout_mode = 2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=424474473]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8" unique_id=1060358031]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer8" unique_id=1939541717]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 0
+item_count = 1
+popup/item_0/text = "1920 x 720"
+popup/item_0/id = 0
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer" unique_id=2045557183]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=421766260]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UI Scale"
+
+[node name="HSlider" type="HSlider" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=119792987]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.01
+max_value = 5.0
+step = 0.1
+value = 1.01
+
+[node name="Value" type="Label" parent="Control/VBoxContainer/HBoxContainer/Middle/TabContainer/Settings/MarginContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer10" unique_id=1879426913]
+layout_mode = 2
+text = "1x"
+
+[node name="Right" type="Control" parent="Control/VBoxContainer/HBoxContainer" unique_id=202488027]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Bottom" type="Control" parent="Control/VBoxContainer" unique_id=478916224]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
