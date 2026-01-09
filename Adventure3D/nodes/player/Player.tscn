@@ -35,4 +35,4 @@ target_position = Vector3(0, 0, -100)
 [node name="Mesh" type="Node3D" parent="." unique_id=2015543247]
 transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, 0, 0, 0)
 
-[node name="Bee" parent="Mesh" unique_id=2135431093 instance=ExtResource("3_mmq48")]
+[node name="Bee" parent="Mesh" unique_id=900150902 instance=ExtResource("3_mmq48")]

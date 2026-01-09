@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0db61l6dubcb"]
 
 [ext_resource type="Terrain3DAssets" uid="uid://dwxyy7eclwv0g" path="res://data/terrain3d/game/terrain_3d_assets.tres" id="1_gtdow"]
+[ext_resource type="PackedScene" uid="uid://cakly07sejhdv" path="res://nodes/characters/CharacterBee.tscn" id="4_gtdow"]
 [ext_resource type="PackedScene" uid="uid://ci7bblct2g8k0" path="res://nodes/player/Player.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://da3ik70t6hs8l" path="res://nodes/characters/Spider.tscn" id="36_o67c1"]
 
@@ -95,3 +96,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.500546, 0, 36.21041)
 
 [node name="Spider" parent="." unique_id=537083917 instance=ExtResource("36_o67c1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.53263, 1, 49.03524)
+
+[node name="Bee" parent="." unique_id=900150902 instance=ExtResource("4_gtdow")]
+transform = Transform3D(-0.8738486, 0, 0.48619804, 0, 1, 0, -0.48619804, 0, -0.8738486, 38.001965, 0, 32.255276)
+
+[node name="Bee2" parent="." unique_id=152028059 instance=ExtResource("4_gtdow")]
+transform = Transform3D(0.7264788, 0, -0.6871889, 0, 1, 0, 0.6871889, 0, 0.7264788, 36.42566, 0, 33.654945)
+
+[node name="Bee3" parent="." unique_id=1656215855 instance=ExtResource("4_gtdow")]
+transform = Transform3D(-0.4389515, 0, -0.8985108, 0, 1, 0, 0.8985108, 0, -0.4389515, 36.53106, -4.7683716e-07, 32.777916)

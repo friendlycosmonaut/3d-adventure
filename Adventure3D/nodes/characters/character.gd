@@ -82,7 +82,7 @@ func _state_idle(_delta):
 				# First wait for a small random amount of time
 				var rng = RandomNumberGenerator.new()
 				await get_tree().create_timer(rng.randf_range(0.4, 0.8)).timeout
-				animation_player.play("Attack")
+				animation_player.play("Wiggle")
 			if dialogue != null and Input.is_action_just_pressed("interact"):
 				Global.create_dialogue(dialogue, dialogue_title)
 				change_state(State.Dialogue)

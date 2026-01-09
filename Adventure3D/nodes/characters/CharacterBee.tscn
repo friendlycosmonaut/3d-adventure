@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cakly07sejhdv"]
+
+[ext_resource type="PackedScene" uid="uid://bt7jooovr2y6t" path="res://assets/bee_low_poly/lowpolybee.blend" id="1_k0c6l"]
+[ext_resource type="PackedScene" uid="uid://fn5jg48dkstg" path="res://nodes/characters/Character.tscn" id="2_hgnx8"]
+
+[node name="Bee" unique_id=900150902 instance=ExtResource("1_k0c6l")]
+
+[node name="Armature" parent="." index="0" unique_id=134244431]
+transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=455632479]
+bones/0/position = Vector3(-0.0008046963, 2.1645057, -0.002007413)
+bones/0/rotation = Quaternion(0.38874358, 0.028374564, -0.0054646353, 0.9208928)
+bones/1/rotation = Quaternion(0.56514484, 0.2577748, 0.31313428, 0.7184082)
+bones/2/rotation = Quaternion(0.40970826, -0.09815975, 0.36258405, 0.8312861)
+bones/3/rotation = Quaternion(0.0914409, -0.00694263, 0.012449062, 0.9957085)
+bones/4/rotation = Quaternion(-0.18373637, -0.040234596, -0.22768569, 0.9553959)
+bones/5/rotation = Quaternion(0.7186664, -0.014979092, 0.20585471, 0.6640167)
+bones/6/rotation = Quaternion(0.41966775, -0.10898812, 0.058367427, 0.8992185)
+bones/7/rotation = Quaternion(0.08250956, -0.007841167, -0.100206144, 0.99150866)
+bones/8/rotation = Quaternion(-0.25962892, -0.012153624, -0.3414315, 0.903255)
+bones/9/rotation = Quaternion(0.145013, -0.1384948, 0.84840095, 0.48990428)
+bones/10/rotation = Quaternion(0.46051833, -0.11094249, 0.30782172, 0.82514274)
+bones/11/rotation = Quaternion(0.10081631, -0.00615719, 0.035809733, 0.99424136)
+bones/12/rotation = Quaternion(-0.20872654, 0.021951875, -0.106973715, 0.971858)
+bones/13/rotation = Quaternion(0.18801711, -0.2532766, 0.49690682, 0.8084456)
+bones/14/rotation = Quaternion(0.6771441, 0.031265464, -0.1903682, 0.7101115)
+bones/15/rotation = Quaternion(0.41726154, 0.42465395, 0.25628045, 0.7615)
+bones/16/rotation = Quaternion(-0.011335859, 0.031007327, 0.072576955, 0.9968163)
+bones/17/rotation = Quaternion(-0.16530977, -0.13099569, -0.14342263, 0.9669244)
+bones/18/rotation = Quaternion(0.6533826, 0.039204653, -0.25194404, 0.7127962)
+bones/19/rotation = Quaternion(0.37766066, 0.5788786, 0.3364931, 0.63956577)
+bones/20/rotation = Quaternion(0.01664241, 0.03893751, 0.06334572, 0.99709296)
+bones/21/rotation = Quaternion(-0.22473344, -0.15767172, -0.046864163, 0.9604365)
+bones/22/rotation = Quaternion(-0.37729168, -0.2460173, 0.7948105, -0.40669727)
+bones/23/rotation = Quaternion(0.2808369, -0.6423559, -0.44529015, 0.55697954)
+bones/24/rotation = Quaternion(-0.0018807319, -0.077510275, -0.14856778, 0.98585814)
+bones/25/rotation = Quaternion(0.088162296, 0.12716465, 0.1890198, 0.96970516)
+bones/26/rotation = Quaternion(-0.5523182, -0.10580301, -0.08674183, 0.8223297)
+bones/27/rotation = Quaternion(0.26881954, -3.4885097e-06, -0.0013481125, 0.9631897)
+bones/28/rotation = Quaternion(-0.82958245, -0.049615428, -0.09190535, 0.5485297)
+bones/29/rotation = Quaternion(-0.83197206, -0.06588194, 0.16181192, 0.52659184)
+bones/30/position = Vector3(-0.32339376, -0.5909489, 1.4702339)
+bones/30/rotation = Quaternion(0.2483941, 0.044587824, 0.363504, 0.8967593)
+bones/31/position = Vector3(-0.33812118, -1.9120396, 0.68770754)
+bones/31/rotation = Quaternion(0.35092282, -0.14456661, 0.8089804, 0.44889244)
+bones/32/position = Vector3(-0.36974424, -0.2384237, 1.5486698)
+bones/32/rotation = Quaternion(0.2209084, 0.20886572, 0.21139261, 0.9289175)
+bones/33/position = Vector3(0.34581256, -0.6240673, 1.4595743)
+bones/33/rotation = Quaternion(0.35664392, 0.25960478, -0.26119363, 0.85859674)
+bones/34/position = Vector3(0.27641916, -1.8521987, 0.7725258)
+bones/34/rotation = Quaternion(0.41178688, 0.25781873, 0.7810879, -0.3922535)
+bones/35/position = Vector3(0.34389478, -0.28401256, 1.5798486)
+bones/35/rotation = Quaternion(0.29810643, 0.28915456, -0.07333797, 0.9067215)
+bones/36/rotation = Quaternion(0.9999486, -0.00125696, -0.00042335986, -0.010051629)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1615711239]
+unique_name_in_owner = true
+
+[node name="Character" parent="." index="2" unique_id=1387622616 node_paths=PackedStringArray("root") instance=ExtResource("2_hgnx8")]
+root = NodePath("..")

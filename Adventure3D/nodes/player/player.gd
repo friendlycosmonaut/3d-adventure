@@ -6,7 +6,8 @@ enum State {
 	Emote
 }
 
-@export var MAX_SPEED = 8.0
+@export var FLY_SPEED = 8.0
+@export var WALK_SPEED = 3.0
 @export var JUMP_VELOCITY = 6.0
 #TODO rename this - is it drag? momentum? 
 @export var momentum_scalar = 0.01
@@ -30,6 +31,10 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	anim.set_blend_time("Idle", "Fly", 0.5)
 	anim.set_blend_time("Fly", "Idle", 0.5)
+	anim.set_blend_time("Idle", "Walk", 0.5)
+	anim.set_blend_time("Walk", "Idle", 0.5)
+	anim.set_blend_time("Walk", "Fly", 0.5)
+	anim.set_blend_time("Fly", "Walk", 0.5)
 	
 	change_state(State.Default)
 
@@ -63,7 +68,7 @@ func change_state(new_state):
 		
 		State.Emote:
 			state = emote_state
-			anim.play("Clicked")
+			anim.play("Wiggle")
 			anim.connect("animation_finished", return_to_default_state)
 
 func return_to_default_state(_animation):
@@ -77,18 +82,20 @@ func default_state(delta):
 		if Input.is_action_just_pressed("emote"):
 			change_state(State.Emote)
 			return
-	else:
-		velocity = lerp(velocity, Vector3.ZERO, 0.1)
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if input_dir:
 		direction = (camera_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if is_on_floor():
+		if input_dir == Vector2.ZERO:
 			speed = lerpf(speed, 0.0, 0.1)
 		else:
-			speed = lerpf(speed, MAX_SPEED, 0.02)
+			if is_on_floor():
+				speed = lerpf(speed, WALK_SPEED, 0.2)
+			else:
+				speed = lerpf(speed, FLY_SPEED, 0.02)
+			
 	else:
 		speed = lerpf(speed, 0.0, 0.1)
 	
@@ -97,13 +104,17 @@ func default_state(delta):
 	if Input.is_action_pressed("fly"):
 		velocity.y = lerp(velocity.y, JUMP_VELOCITY, 0.1)
 		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation - 0.2, 0.05)
-	elif not is_on_floor() and Input.is_action_pressed("sink"):
-		velocity.y = lerp(velocity.y, -JUMP_VELOCITY, 0.1)
-		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation + 0.2, 0.05)
+	elif not is_on_floor():
+		if Input.is_action_pressed("sink"):
+			velocity.y = lerp(velocity.y, 0.0, 0.05)
+			#velocity.y = lerp(velocity.y, -JUMP_VELOCITY, 0.1)
+			body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation + 0.2, 0.05)
+		else:
+			body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation, 0.07)
+			# Add the gravity.
+			velocity += get_gravity() * delta
 	else:
-		body.global_rotation.x = lerp_angle(body.global_rotation.x, x_rotation, 0.07)
-		# Add the gravity.
-		velocity += get_gravity() * delta
+		body.global_rotation.x = lerp_angle(body.global_rotation.x, 0, 0.1)
 	
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
@@ -128,8 +139,8 @@ func default_state(delta):
 			if anim.current_animation != "Idle": 
 				anim.play("Idle")
 		else:
-			if anim.current_animation != "Idle": 
-				anim.play("Idle")
+			if anim.current_animation != "Walk": 
+				anim.play("Walk")
 	else:
 		if anim.current_animation != "Fly": 
 			anim.play("Fly")
